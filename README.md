@@ -2,8 +2,10 @@
 
 ### Screenshots
 
-* drun
+##### drun
+
 ![drun](./screenshots/drun.png)
 
-* wallpaper
+##### wallpaper
+
 ![wallpaper](./screenshots/wallpaper.png) 
