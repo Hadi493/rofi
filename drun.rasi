@@ -1,30 +1,56 @@
+/* Catppuccin Mocha Colors from config.rasi */
 * {
-    font: "Iosevka Nerd Font 9";
-    icon-theme: "Tela-circle-blue-dark";
-    background: rgb(13, 13, 13);
-    foreground: #abb2bf;
-    selected-background:rgba(255, 255, 255, 0.5);
-    selected-foreground:rgb(255, 255, 255);
-    border-radius: 8px;
+    base:      #1e1e2e;
+    mantle:    #181825;
+    crust:     #11111b;
+    text:      #cdd6f4;
+    subtext0:  #a6adc8;
+    subtext1:  #bac2de;
+    surface0:  #313244;
+    surface1:  #45475a;
+    surface2:  #585b70;
+    overlay0:  #6c7086;
+    overlay1:  #7f849c;
+    overlay2:  #9399b2;
+    blue:      #89b4fa;
+    lavender:  #b4befe;
+    sapphire:  #74c7ec;
+    sky:       #89dceb;
+    teal:      #94e2d5;
+    green:     #a6e3a1;
+    yellow:    #f9e2af;
+    peach:     #fab387;
+    maroon:    #eba0ac;
+    red:       #f38ba8;
+    mauve:     #cba6f7;
+    pink:      #f5c2e7;
+    flamingo:  #f2cdcd;
+    rosewater: #f5e0dc;
+
+    font: "Iosevka Nerd Font 19";
+    // icon-theme: "Tela-circle-blue-dark";
+    border-radius: 0px;
 }
 
 configuration {
     modi: "drun";
     show-icons: true;
     drun-display-format: "{name}";
-    alternate-row-colors: false;
+    alternate-row-colors: true;
 }
 
 window {
-    width: 450px;
-    height: 455px;
+    width: 660px;
+    height: 615px;
     transparency: "real";
     fullscreen: false;
     enabled: true;
     cursor: "default";
     spacing: 0px;
-    border-radius: 0;
-    background-color: @background;
+    border-radius: 0px;
+    background-color: @base;
+    border: 0px solid;
+    border-color: @surface1;
 }
 
 mainbox {
@@ -33,27 +59,27 @@ mainbox {
     padding: 4px;
     orientation: vertical;
     children: ["listbox", "inputbar"];
-    background-color: transparent;
+    background-color: @base;
 }
 
 inputbar {
     enabled: true;
-    padding: 4px;
+    padding: 12px;
     spacing: 8px;
     margin: 6px;
-    background-color: rgba(33, 37, 43, 0.29);
-    text-color: @foreground;
-    border-radius: @border-radius;
+    background-color: @surface0;
+    text-color: @text;
+    border-radius: 0px;
     children: ["entry"];
 }
 
 entry {
     enabled: true;
-    padding: 3px;
+    padding: 0px;
     text-color: inherit;
     cursor: text;
     placeholder: "Type to search...";
-    placeholder-color: #5c6370;
+    placeholder-color: @subtext0;
     background-color: transparent;
 }
 
@@ -62,11 +88,11 @@ listbox {
     spacing: 0px;
     orientation: vertical;
     children: ["listview"];
-    background-color: transparent;
+    background-color: @base;
 }
 
 listview {
-    padding: 8px;
+    padding: 2px;
     spacing: 10px;
     enabled: true;
     columns: 4;
@@ -79,55 +105,55 @@ listview {
     fixed-height: true;
     fixed-columns: true;
     cursor: "default";
-    background-color: transparent;
-    border-radius: @border-radius;
+    background-color: @base;
+    border-radius: 0px;
 }
 
 element {
     orientation:                 vertical;
     enabled:                     true;
     spacing:                     2px;
-    padding:                     8px;
+    padding:                     5px;
     cursor:                      pointer;
-    background-color:rgba(255, 255, 255, 0.24);
-    color:                     #abb2bf;
-    border-radius:               8px;
+    background-color:            @base;
+    color:                       @base;
+    border-radius:               0px;
 }
 
 
 element selected.normal {
-    background-color: @selected-background;
-    text-color: @selected-foreground;
-    border: 3px;
+    background-color: @mauve;
+    text-color: @crust;
+    border: 0px;
 }
 
 element-icon {
     size: 32px;
     cursor: inherit;
-    background-color: transparent;
+    background-color: @base;
     text-color: inherit;
 }
 
 element-text {
     vertical-align: 0.5;
     horizontal-align: 0.5;
-    cursor: inherit;
-    background-color: transparent;
-    text-color: #000000;
-    font: "Iosevka Nerd Font 7";
+    cursor: @text;
+    background-color: @base;
+    text-color: @text;
+    font: "Iosevka Nerd Font 12";
 }
 
 error-message {
     padding: 15px;
-    text-color: #e06c75;
-    background-color: @background;
-    border-radius: @border-radius;
+    text-color: @red;
+    background-color: @base;
+    border-radius: 0px;
     children: ["textbox"];
 }
 
 textbox {
-    text-color: inherit;
-    background-color: inherit;
+    text-color: @text;
+    background-color: @base;
     vertical-align: 0.5;
     horizontal-align: 0.5;
 }

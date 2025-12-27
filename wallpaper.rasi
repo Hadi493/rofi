@@ -1,10 +1,34 @@
+/* Catppuccin Mocha Colors from config.rasi */
 * {
+    base:      #1e1e2e;
+    mantle:    #181825;
+    crust:     #11111b;
+    text:      #cdd6f4;
+    subtext0:  #a6adc8;
+    subtext1:  #bac2de;
+    surface0:  #313244;
+    surface1:  #45475a;
+    surface2:  #585b70;
+    overlay0:  #6c7086;
+    overlay1:  #7f849c;
+    overlay2:  #9399b2;
+    blue:      #89b4fa;
+    lavender:  #b4befe;
+    sapphire:  #74c7ec;
+    sky:       #89dceb;
+    teal:      #94e2d5;
+    green:     #a6e3a1;
+    yellow:    #f9e2af;
+    peach:     #fab387;
+    maroon:    #eba0ac;
+    red:       #f38ba8;
+    mauve:     #cba6f7;
+    pink:      #f5c2e7;
+    flamingo:  #f2cdcd;
+    rosewater: #f5e0dc;
+
     font: "Iosevka Nerd Font 15";
     icon-theme: "Tela-circle-blue-dark";
-    background: rgb(13, 13, 13);
-    foreground: #abb2bf;
-    selected-background: rgba(255, 255, 255, 0.5);
-    selected-foreground: rgb(255, 255, 255);
     border-radius: 8px;
 }
 
@@ -18,14 +42,16 @@ configuration {
 
 window {
     width: 1100px;
-    height: 700px;
+    height: 610px;
     transparency: "real";
     fullscreen: false;
     enabled: true;
     cursor: "default";
     spacing: 0px;
     border-radius: @border-radius;
-    background-color: @background;
+    background-color: @base;
+    border: 2px solid;
+    border-color: @surface1;
 }
 
 mainbox {
@@ -39,11 +65,11 @@ mainbox {
 
 inputbar {
     enabled: true;
-    padding: 6px;
+    padding: 12px;
     spacing: 8px;
     margin: 6px;
-    background-color: rgba(33, 37, 43, 0.29);
-    text-color: @foreground;
+    background-color: @surface0;
+    text-color: @text;
     border-radius: @border-radius;
     children: ["entry"];
 }
@@ -54,7 +80,7 @@ entry {
     text-color: inherit;
     cursor: text;
     placeholder: "Search wallpapers...";
-    placeholder-color: #5c6370;
+    placeholder-color: @subtext0;
     background-color: transparent;
 }
 
@@ -90,15 +116,15 @@ element {
     spacing: 6px;
     padding: 8px;
     cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.10);
-    color: #abb2bf;
+    background-color: @surface0;
+    color: @text;
     border-radius: 8px;
 }
 
 element selected.normal {
-    background-color: @selected-background;
-    text-color: @selected-foreground;
-    border: 3px;
+    background-color: @mauve;
+    text-color: @crust;
+    border: 0px;
 }
 
 element-icon {
@@ -113,14 +139,14 @@ element-text {
     horizontal-align: 0.5;
     cursor: inherit;
     background-color: transparent;
-    text-color: #d7dae0;
+    text-color: inherit;
     font: "Iosevka Nerd Font 8";
 }
 
 error-message {
     padding: 15px;
-    text-color: #e06c75;
-    background-color: @background;
+    text-color: @red;
+    background-color: @base;
     border-radius: @border-radius;
     children: ["textbox"];
 }
@@ -131,4 +157,3 @@ textbox {
     vertical-align: 0.5;
     horizontal-align: 0.5;
 }
-
