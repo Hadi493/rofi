@@ -60,6 +60,8 @@ window {
     anchor: center;
     fullscreen: false;
     width: 600px;
+    height: 610px;
+    spacing: 0px;
     border-radius: 12px;
     cursor: "default";
     background-color: @base;
@@ -76,7 +78,8 @@ mainbox {
     border-radius: 0px 0px 0px 0px;
     border-color: @surface1;
     background-color: transparent;
-    children: [ "inputbar", "listview" ];
+    orientation: vertical;
+    children: [ "listview", "inputbar" ];
 }
 
 inputbar {
@@ -121,7 +124,7 @@ entry {
 
 listview {
     enabled: true;
-    columns: 1;
+    columns: 3;
     lines: 12;
     cycle: true;
     dynamic: true;
@@ -131,7 +134,7 @@ listview {
     fixed-height: true;
     fixed-columns: true;
     
-    spacing: 2px;
+    spacing: 12px;
     margin: 0px;
     padding: 0px;
     border: 0px solid;
@@ -150,6 +153,7 @@ scrollbar {
 }
 
 element {
+    orientation: vertical;
     enabled: true;
     spacing: 10px;
     margin: 0px;
@@ -210,7 +214,7 @@ element alternate.active {
 element-icon {
     background-color: transparent;
     text-color: inherit;
-    size: 28px;
+    size: 48px;
     cursor: inherit;
 }
 
@@ -220,7 +224,7 @@ element-text {
     highlight: inherit;
     cursor: inherit;
     vertical-align: 0.5;
-    horizontal-align: 0.0;
+    horizontal-align: 0.5;
 }
 
 /* Optional: Custom colors for different modes */
