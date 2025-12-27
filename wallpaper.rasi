@@ -1,0 +1,134 @@
+* {
+    font: "Iosevka Nerd Font 15";
+    icon-theme: "Tela-circle-blue-dark";
+    background: rgb(13, 13, 13);
+    foreground: #abb2bf;
+    selected-background: rgba(255, 255, 255, 0.5);
+    selected-foreground: rgb(255, 255, 255);
+    border-radius: 8px;
+}
+
+configuration {
+    show-icons: true;
+    display-drun: "";
+    display-run: "";
+    display-filebrowser: "";
+    display-window: "";
+}
+
+window {
+    width: 1100px;
+    height: 700px;
+    transparency: "real";
+    fullscreen: false;
+    enabled: true;
+    cursor: "default";
+    spacing: 0px;
+    border-radius: @border-radius;
+    background-color: @background;
+}
+
+mainbox {
+    enabled: true;
+    spacing: 0px;
+    padding: 8px;
+    orientation: vertical;
+    children: ["listbox", "inputbar"];
+    background-color: transparent;
+}
+
+inputbar {
+    enabled: true;
+    padding: 6px;
+    spacing: 8px;
+    margin: 6px;
+    background-color: rgba(33, 37, 43, 0.29);
+    text-color: @foreground;
+    border-radius: @border-radius;
+    children: ["entry"];
+}
+
+entry {
+    enabled: true;
+    padding: 4px;
+    text-color: inherit;
+    cursor: text;
+    placeholder: "Search wallpapers...";
+    placeholder-color: #5c6370;
+    background-color: transparent;
+}
+
+listbox {
+    padding: 0px;
+    spacing: 0px;
+    orientation: vertical;
+    children: ["listview"];
+    background-color: transparent;
+}
+
+listview {
+    padding: 8px;
+    spacing: 12px;
+    enabled: true;
+    columns: 6;
+    rows: 3;
+    cycle: true;
+    dynamic: true;
+    scrollbar: false;
+    layout: vertical;
+    reverse: false;
+    fixed-height: true;
+    fixed-columns: true;
+    cursor: "default";
+    background-color: transparent;
+    border-radius: @border-radius;
+}
+
+element {
+    orientation: vertical;
+    enabled: true;
+    spacing: 6px;
+    padding: 8px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.10);
+    color: #abb2bf;
+    border-radius: 8px;
+}
+
+element selected.normal {
+    background-color: @selected-background;
+    text-color: @selected-foreground;
+    border: 3px;
+}
+
+element-icon {
+    size: 120px;
+    cursor: inherit;
+    background-color: transparent;
+    text-color: inherit;
+}
+
+element-text {
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+    cursor: inherit;
+    background-color: transparent;
+    text-color: #d7dae0;
+    font: "Iosevka Nerd Font 8";
+}
+
+error-message {
+    padding: 15px;
+    text-color: #e06c75;
+    background-color: @background;
+    border-radius: @border-radius;
+    children: ["textbox"];
+}
+
+textbox {
+    text-color: inherit;
+    background-color: inherit;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}
+
